@@ -1,5 +1,6 @@
 # ✨数据结构与算法
 
+> 源码存放地
 > Github：[https://github.com/sanshisi/DS](https://github.com/sanshisi/DS)
 
 # 一、概念介绍
@@ -14,14 +15,14 @@
 * 树形结构：树形结构中的数据元素之间存在一种一对一的层次关系
 *  图形结构：图形结构的数据元素是多对多的关系
 
-![image-20220110113715973](https://gitee.com/sanshisi/img/raw/master/202201101137060.png)
+![image-20220110113715973](https://img-blog.csdnimg.cn/img_convert/25ebf6fa9acba0b50b353a0b13840989.png)
 
 ### 1.2物理结构
 
 * 顺序存储结构：开辟一组连续的空间存储数据
 * 链式存储结构：开辟一组随机的空间存储数据
 
-![image-20220110123504095](https://gitee.com/sanshisi/img/raw/master/202201101235134.png)
+![image-20220110123504095](https://img-blog.csdnimg.cn/img_convert/c684212070b16dbf6c030af726b8377b.png)
 
 ## 2.算法概述
 
@@ -54,9 +55,9 @@ int sum=(N+1)*N/2;
 * 事后统计法
 * 事前分析法
 
-![image-20220110124119211](https://gitee.com/sanshisi/img/raw/master/202201101241276.png)
+![image-20220110124119211](https://img-blog.csdnimg.cn/img_convert/ad293e77d75a92004d532dd44f160bef.png)
 
-![image-20220110124130526](https://gitee.com/sanshisi/img/raw/master/202201101241589.png)
+![image-20220110124130526](https://img-blog.csdnimg.cn/img_convert/e7272dfac181efeafb3bd1aa3b7081b8.png)
 
 
 
@@ -75,9 +76,9 @@ int sum=(N+1)*N/2;
 > 就是那些无循环、无递归、与问题输入规模N无关的、逐行执行的代码
 
 ```java
-int a = 3;
-int b = 4;
-int c = a + b;
+int a = 3;
+int b = 4;
+int c = a + b;
 ```
 
 ---
@@ -87,19 +88,19 @@ int c = a + b;
 > 与问题输入规模有关的，主要是一层循环的代码，多个一层循环可以并列但不能包含
 
 ```java
-int N = 10;
-for (int i = 1; i <= N; i++) {
-    System.out.println(i);
+int N = 10;
+for (int i = 1; i <= N; i++) {
+    System.out.println(i);
 }
 ```
 
 ```java
-int N = 10;
-for (int i = 1; i <= N; i++) {
-    System.out.println(i);
+int N = 10;
+for (int i = 1; i <= N; i++) {
+    System.out.println(i);
 }
-for (int i = 1; i <= N; i++) {
-    System.out.println(i);
+for (int i = 1; i <= N; i++) {
+    System.out.println(i);
 }
 ```
 
@@ -110,11 +111,11 @@ for (int i = 1; i <= N; i++) {
 > 和线性阶O(n)一样，只不过我们有两种数据的输入规模
 
 ```java
-int N = 10;
-for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= N; j++) {
-        System.out.println(i + j);
-    }
+int N = 10;
+for (int i = 1; i <= N; i++) {
+    for (int j = 1; j <= N; j++) {
+        System.out.println(i + j);
+    }
 }
 ```
 
@@ -125,11 +126,11 @@ for (int i = 1; i <= N; i++) {
 > 与问题输入规模有关的，主要是二层嵌套循环的代码
 
 ```java
-int N = 10;
-for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= N; j++) {
-        System.out.println(i + j);
-    }
+int N = 10;
+for (int i = 1; i <= N; i++) {
+    for (int j = 1; j <= N; j++) {
+        System.out.println(i + j);
+    }
 }
 ```
 
@@ -140,12 +141,12 @@ for (int i = 1; i <= N; i++) {
 > 和平方阶O(n^2)一样，只不过我们有两种数据输入规模
 
 ```java
-int N = 10;
-int M = 20;
-for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= M; j++) {
-        System.out.println(i + j);
-    }
+int N = 10;
+int M = 20;
+for (int i = 1; i <= N; i++) {
+    for (int j = 1; j <= M; j++) {
+        System.out.println(i + j);
+    }
 }
 ```
 
@@ -156,21 +157,21 @@ for (int i = 1; i <= N; i++) {
 > 与问题输入规模有关的，主要是一层循环迭代或递归的代码
 
 ```java
-int count = 1;
-int N = 100000;
-while (count < N) 
-    count = count * 2;
+int count = 1;
+int N = 100000;
+while (count < N) 
+    count = count * 2;
 ```
 
 ---
 
 ✨**时间复杂度简单计算**：忽略常数、只保留幂高项、且忽略幂高项的系数。
 
-![image-20220110125423456](https://gitee.com/sanshisi/img/raw/master/202201101254494.png)
+![image-20220110125423456](https://img-blog.csdnimg.cn/img_convert/f497f099e1b5d76459273da8ec59a4a4.png)
 
 **✨常见阶的比较：**
 
-![image-20220110125557002](https://gitee.com/sanshisi/img/raw/master/202201101255049.png)
+![image-20220110125557002](https://img-blog.csdnimg.cn/img_convert/45313462df62bec9b886ebc3bd8763bf.png)
 
 
 
@@ -213,7 +214,7 @@ while (count < N) 
 
 定义一系列例如添加、删除、大小、查找元素第一次出现的位置、元素是否在数组、数组是否为空、分割数组、数组排序、迭代……
 
-![image-20220110131628955](https://gitee.com/sanshisi/img/raw/master/202201101316985.png)
+![image-20220110131628955](https://img-blog.csdnimg.cn/img_convert/1b5c7ae307e57c146da17a38960165b1.png)
 
 代码位置：[https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/List.java](https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/List.java)
 
@@ -345,7 +346,7 @@ class ArrayListIterator implements Iterator<E> {
 
 
 
-![image-20220110131732408](https://gitee.com/sanshisi/img/raw/master/202201101317446.png)
+![image-20220110131732408](https://img-blog.csdnimg.cn/img_convert/6e5d600a5fb86d0abff854bc518701d9.png)
 
 代码位置：[https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayList.java)
 
@@ -368,13 +369,13 @@ class ArrayListIterator implements Iterator<E> {
 
 出栈本质上就是动态数组尾部删除一个数据
 
-![image-20220110132149124](https://gitee.com/sanshisi/img/raw/master/202201101321166.png)
+![image-20220110132149124](https://img-blog.csdnimg.cn/img_convert/ea0c1b5f1c149c5e28b90fb2192b2964.png)
 
 代码位置：[https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/Stack.java](https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/Stack.java)
 
 ### 3.2实现ArrayStack
 
-![image-20220110132205228](https://gitee.com/sanshisi/img/raw/master/202201101322259.png)
+![image-20220110132205228](https://img-blog.csdnimg.cn/img_convert/0852edb68dfad0b47985d742956431ec.png)
 
 代码位置：[https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayStack.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayStack.java)
 
@@ -417,7 +418,7 @@ private static String insertBlanks(String expression) {
 
 举个例子：
 
-1*2+3
+1*2+3 
 
 > 需要遍历5次
 
@@ -427,7 +428,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [1]`
 
-`operatorStack : []`
+`operatorStack : []`	
 
 **第2次遍历：**
 
@@ -435,7 +436,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [1]`
 
-`operatorStack : [*]`
+`operatorStack : [*]`	
 
 **第3次遍历：**
 
@@ -443,7 +444,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [1,2]`
 
-`operatorStack : [*]`
+`operatorStack : [*]`	
 
 **第4次遍历：**
 
@@ -451,7 +452,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [2]`
 
-`operatorStack : [+]`
+`operatorStack : [+]`	
 
 **第5次遍历：**
 
@@ -459,7 +460,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [2,3]`
 
-`operatorStack : [+]`
+`operatorStack : [+]`	
 
 **最后**
 
