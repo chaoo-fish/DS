@@ -1,5 +1,6 @@
 package p2.线性结构;
 
+// 后缀表达式计算器    逆波兰表达式
 public class SuffixCalculator {
     public static void main(String[] args) {
         String infixExpression = "(10+20/2*3)/2+8";
