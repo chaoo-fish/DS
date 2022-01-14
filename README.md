@@ -1,6 +1,5 @@
 # ✨数据结构与算法
 
-> 源码存放地
 > Github：[https://github.com/sanshisi/DS](https://github.com/sanshisi/DS)
 
 # 一、概念介绍
@@ -15,14 +14,14 @@
 * 树形结构：树形结构中的数据元素之间存在一种一对一的层次关系
 *  图形结构：图形结构的数据元素是多对多的关系
 
-![image-20220110113715973](https://img-blog.csdnimg.cn/img_convert/25ebf6fa9acba0b50b353a0b13840989.png)
+![image-20220110113715973](https://gitee.com/sanshisi/img/raw/master/202201101137060.png)
 
 ### 1.2物理结构
 
 * 顺序存储结构：开辟一组连续的空间存储数据
 * 链式存储结构：开辟一组随机的空间存储数据
 
-![image-20220110123504095](https://img-blog.csdnimg.cn/img_convert/c684212070b16dbf6c030af726b8377b.png)
+![image-20220110123504095](https://gitee.com/sanshisi/img/raw/master/202201101235134.png)
 
 ## 2.算法概述
 
@@ -55,9 +54,9 @@ int sum=(N+1)*N/2;
 * 事后统计法
 * 事前分析法
 
-![image-20220110124119211](https://img-blog.csdnimg.cn/img_convert/ad293e77d75a92004d532dd44f160bef.png)
+![image-20220110124119211](https://gitee.com/sanshisi/img/raw/master/202201101241276.png)
 
-![image-20220110124130526](https://img-blog.csdnimg.cn/img_convert/e7272dfac181efeafb3bd1aa3b7081b8.png)
+![image-20220110124130526](https://gitee.com/sanshisi/img/raw/master/202201101241589.png)
 
 
 
@@ -76,9 +75,9 @@ int sum=(N+1)*N/2;
 > 就是那些无循环、无递归、与问题输入规模N无关的、逐行执行的代码
 
 ```java
-int a = 3;
-int b = 4;
-int c = a + b;
+int a = 3;
+int b = 4;
+int c = a + b;
 ```
 
 ---
@@ -88,19 +87,19 @@ int c = a + b;
 > 与问题输入规模有关的，主要是一层循环的代码，多个一层循环可以并列但不能包含
 
 ```java
-int N = 10;
-for (int i = 1; i <= N; i++) {
-    System.out.println(i);
+int N = 10;
+for (int i = 1; i <= N; i++) {
+    System.out.println(i);
 }
 ```
 
 ```java
-int N = 10;
-for (int i = 1; i <= N; i++) {
-    System.out.println(i);
+int N = 10;
+for (int i = 1; i <= N; i++) {
+    System.out.println(i);
 }
-for (int i = 1; i <= N; i++) {
-    System.out.println(i);
+for (int i = 1; i <= N; i++) {
+    System.out.println(i);
 }
 ```
 
@@ -111,11 +110,11 @@ for (int i = 1; i <= N; i++) {
 > 和线性阶O(n)一样，只不过我们有两种数据的输入规模
 
 ```java
-int N = 10;
-for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= N; j++) {
-        System.out.println(i + j);
-    }
+int N = 10;
+for (int i = 1; i <= N; i++) {
+    for (int j = 1; j <= N; j++) {
+        System.out.println(i + j);
+    }
 }
 ```
 
@@ -126,11 +125,11 @@ for (int i = 1; i <= N; i++) {
 > 与问题输入规模有关的，主要是二层嵌套循环的代码
 
 ```java
-int N = 10;
-for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= N; j++) {
-        System.out.println(i + j);
-    }
+int N = 10;
+for (int i = 1; i <= N; i++) {
+    for (int j = 1; j <= N; j++) {
+        System.out.println(i + j);
+    }
 }
 ```
 
@@ -141,12 +140,12 @@ for (int i = 1; i <= N; i++) {
 > 和平方阶O(n^2)一样，只不过我们有两种数据输入规模
 
 ```java
-int N = 10;
-int M = 20;
-for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= M; j++) {
-        System.out.println(i + j);
-    }
+int N = 10;
+int M = 20;
+for (int i = 1; i <= N; i++) {
+    for (int j = 1; j <= M; j++) {
+        System.out.println(i + j);
+    }
 }
 ```
 
@@ -157,21 +156,21 @@ for (int i = 1; i <= N; i++) {
 > 与问题输入规模有关的，主要是一层循环迭代或递归的代码
 
 ```java
-int count = 1;
-int N = 100000;
-while (count < N) 
-    count = count * 2;
+int count = 1;
+int N = 100000;
+while (count < N) 
+    count = count * 2;
 ```
 
 ---
 
 ✨**时间复杂度简单计算**：忽略常数、只保留幂高项、且忽略幂高项的系数。
 
-![image-20220110125423456](https://img-blog.csdnimg.cn/img_convert/f497f099e1b5d76459273da8ec59a4a4.png)
+![image-20220110125423456](https://gitee.com/sanshisi/img/raw/master/202201101254494.png)
 
 **✨常见阶的比较：**
 
-![image-20220110125557002](https://img-blog.csdnimg.cn/img_convert/45313462df62bec9b886ebc3bd8763bf.png)
+![image-20220110125557002](https://gitee.com/sanshisi/img/raw/master/202201101255049.png)
 
 
 
@@ -214,9 +213,9 @@ while (count < N)
 
 定义一系列例如添加、删除、大小、查找元素第一次出现的位置、元素是否在数组、数组是否为空、分割数组、数组排序、迭代……
 
-![image-20220110131628955](https://img-blog.csdnimg.cn/img_convert/1b5c7ae307e57c146da17a38960165b1.png)
+![image-20220110131628955](https://gitee.com/sanshisi/img/raw/master/202201101316985.png)
 
-代码位置：[https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/List.java](https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/List.java)
+代码位置：[List.java](https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/List.java)
 
 ### 2.2实现ArrayList
 
@@ -346,9 +345,9 @@ class ArrayListIterator implements Iterator<E> {
 
 
 
-![image-20220110131732408](https://img-blog.csdnimg.cn/img_convert/6e5d600a5fb86d0abff854bc518701d9.png)
+![image-20220110131732408](https://gitee.com/sanshisi/img/raw/master/202201101317446.png)
 
-代码位置：[https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayList.java)
+代码位置：[ArrayList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayList.java)
 
 ## 3.栈的实现
 
@@ -369,15 +368,15 @@ class ArrayListIterator implements Iterator<E> {
 
 出栈本质上就是动态数组尾部删除一个数据
 
-![image-20220110132149124](https://img-blog.csdnimg.cn/img_convert/ea0c1b5f1c149c5e28b90fb2192b2964.png)
+![image-20220110132149124](https://gitee.com/sanshisi/img/raw/master/202201101321166.png)
 
-代码位置：[https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/Stack.java](https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/Stack.java)
+代码位置：[Stack.java](https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/Stack.java)
 
 ### 3.2实现ArrayStack
 
-![image-20220110132205228](https://img-blog.csdnimg.cn/img_convert/0852edb68dfad0b47985d742956431ec.png)
+![image-20220110132205228](https://gitee.com/sanshisi/img/raw/master/202201101322259.png)
 
-代码位置：[https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayStack.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayStack.java)
+代码位置：[ArrayStack.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayStack.java)
 
 
 
@@ -418,7 +417,7 @@ private static String insertBlanks(String expression) {
 
 举个例子：
 
-1*2+3 
+1*2+3
 
 > 需要遍历5次
 
@@ -428,7 +427,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [1]`
 
-`operatorStack : []`	
+`operatorStack : []`
 
 **第2次遍历：**
 
@@ -436,7 +435,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [1]`
 
-`operatorStack : [*]`	
+`operatorStack : [*]`
 
 **第3次遍历：**
 
@@ -444,7 +443,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [1,2]`
 
-`operatorStack : [*]`	
+`operatorStack : [*]`
 
 **第4次遍历：**
 
@@ -452,7 +451,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [2]`
 
-`operatorStack : [+]`	
+`operatorStack : [+]`
 
 **第5次遍历：**
 
@@ -460,7 +459,7 @@ private static String insertBlanks(String expression) {
 
 `numberStack : [2,3]`
 
-`operatorStack : [+]`	
+`operatorStack : [+]`
 
 **最后**
 
@@ -468,4 +467,198 @@ private static String insertBlanks(String expression) {
 
 
 
-代码位置：[https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/InfixCalculator.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/InfixCalculator.java)
+代码位置：[InfixCalculator.java]( InfixCalculator.java)
+
+
+
+### 3.4中缀转后缀   ->  后缀表达式 做计算器(逆波兰表达式)
+
+**中缀转后缀**
+
+将中缀表达式转换为后缀表达式，更为容易计算
+
+```java
+中缀形式：(10+20/2*3)/2+8
+后缀形式：10 20 2 / 3 * + 2 / 8 + 
+```
+
+需要使用一个符号栈和一个数组进行存储数据
+
+![中缀转后缀](https://gitee.com/sanshisi/img/raw/master/202201141726223.gif)
+
+大概原理：遍历中缀表达式，如果是数字，直接存入数组中，遇到符号，首先判断优先级，如果栈顶优先级更高或相等，则将栈顶符号放入数组中，如果是左括号，则将左括号入符号栈，如果是右括号，则将符号栈中左括号上的符号依次弹出放入数组中（注：括号不需要放入数组），遍历到最后，如果符号栈不为空，依次将符号栈中元素弹出放入数组中就好了
+
+
+
+代码位置：[InfixToSuffix.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/InfixToSuffix.java)
+
+
+
+
+
+**逆波兰表达式**：使用后缀表达式做计算器
+
+代码位置：[SuffixCalculator.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/SuffixCalculator.java)
+
+### 3.5进制转换
+
+**✨掌握好如何使用ASCAll码**
+
+**十进制转十六进制**-
+
+代码位置：[DecToHex.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/DecToHex.java)
+
+
+
+
+
+**十六进制转十进制**
+
+代码位置：[HexToDec.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/HexToDec.java)
+
+### 3.6回文判断
+
+法1：
+
+每次入栈前要判断该值和栈顶值是否相等，如果相等就进行弹栈操作，最后通过判断栈是否为空来决定是否为回文
+
+> 但是有一个bug，就是遇上`aabbccdd`这种也会判断成回文
+
+法2：
+
+通过双指针方法进行遍历字符串，解决了法一的bug
+
+代码位置：[JudgingPalindrome.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/JudgingPalindrome.java)
+
+### 3.7括号匹配
+
+法1：
+
+```java
+jshell> '(' - ')'
+$2 ==> -1
+    
+jshell> '[' - ']'
+$3 ==> -2
+    
+jshell> '{' - '}'
+$4 ==> -2
+```
+
+
+
+通过Ascall码可以知道，（）[]  {} 左括号和右括号的差值为-1或-2，可以利用这个方法进行括号匹配
+
+
+
+法2：
+
+通过`HashMap`来做
+
+```java
+HashMap<Character,Character> map = new HashMap<>();
+map.put('[',']');
+map.put('<','>');
+map.put('(',')');
+map.put('{','}');
+```
+
+只需要进行判断   栈顶元素是否是`map`中的键  && 该键对应的值是否等于遍历字符串的值
+
+
+
+代码位置：[MatchBracket.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/MatchBracket.java)
+
+### 3.8双端栈的实现
+
+只是将栈的方法拓宽了，代码实现其实不是很难
+
+代码位置：[ArrayDoubleEndStack.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayDoubleEndStack.java)
+
+## 4.队列的实现
+
+> 栈是先进先出
+
+### 4.1Queue接口的定义
+
+```java
+offer()		入队列
+poll()		出队列
+element()	查看队首元素
+```
+
+
+
+![image-20220114153924198](https://gitee.com/sanshisi/img/raw/master/202201141539251.png)
+
+代码位置：[Queue.java](https://github.com/sanshisi/DS/blob/master/src/p1/%E6%8E%A5%E5%8F%A3/Queue.java)
+
+### 4.2实现ArrayQueue
+
+![image-20220114154224235](https://gitee.com/sanshisi/img/raw/master/202201141542282.png)
+
+代码位置:[ArrayQueue.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayQueue.java)
+
+### 4.3文件遍历
+
+同过对队列实现文件遍历，只要队列不为空，则出队一个目录对象，将该目录对象展开，开始遍历，遇到文件则打印名称，遇到其他目录 则进队
+
+
+
+代码位置:[DiretoryTraversal.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/DiretoryTraversal.java)
+
+### 4.4栈实现队列
+
+这里需要两个栈：A栈和B栈
+
+其中真正用来存放数据的是A栈，B栈仅做中转用
+
+假设A栈中有三个元素：1,2,3
+
+**现在进行出队列**：出的是1，所以需要先依次将A栈中的3,2出栈，存入B栈中，再将1出栈返回，之后再将B栈中的元素依次出栈放入A栈中即可
+
+**如果是进行入队列**：直接人A栈即可
+
+
+
+代码位置:[StackToQueue.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/StackToQueue.java)
+
+### 4.5队列实现栈
+
+这里需要两个队列：A队列和B队列
+
+两个队列可以轮流存储数据
+
+假设在A中入了三个元素：1,2,3
+
+**现在进行出栈**：出的是3，需要依次将A中的1,2出了，存入B中，然后再将3出队列返回即可，此时数据就全在B中
+
+**现在进行查看栈顶元素**：栈顶元素为2，B中元素1,2，需要将B中1出队列，存入A队列中，然后在将1出队列，在返回前，将1入A队列，
+
+此时元素就全存在了A栈中
+
+
+
+代码位置:[QueueToStack.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/QueueToStack.java)
+
+### 4.6循环队列
+
+将普通的队列变成一个循环队列，节省空间，因此需要定义一个头指针和尾指针
+
+需要预留一个位置空给尾指针
+
+> 假设不留空，那么就会导致判断空或者满的时候判断条件是一样的
+
+因此我们需要留一个位置给尾指针，用来改变判断条件
+
+
+
+代码位置:[ArrayLoopQueue.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayLoopQueue.java)
+
+### 4.7双端队列
+
+其实就是循环队列的升级版
+
+只是在其中加了一些对栈方法的实现
+
+代码位置:[ArrayDeque.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayDeque.java)
