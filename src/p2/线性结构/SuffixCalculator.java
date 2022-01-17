@@ -1,5 +1,7 @@
 package p2.线性结构;
 
+import p3.链式结构.LinkedList;
+
 // 后缀表达式计算器    逆波兰表达式
 public class SuffixCalculator {
     public static void main(String[] args) {
@@ -10,7 +12,8 @@ public class SuffixCalculator {
     }
 
     private static int evaluateSuffix(String expresssion) {
-        ArrayStack<Integer> stack = new ArrayStack<>();
+//        ArrayStack<Integer> stack = new ArrayStack<>();
+        LinkedList<Integer> stack = new LinkedList<>();
         String[] tokens = expresssion.split(" ");
         for (String token : tokens) {
             if (token.length() == 0) {
@@ -25,7 +28,7 @@ public class SuffixCalculator {
         return stack.pop();
     }
 
-    private static void processAnOperator(ArrayStack<Integer> stack, String token) {
+    private static void processAnOperator(LinkedList<Integer> stack, String token) {
         int num1 = stack.pop();
         int num2 = stack.pop();
         if (token.equals("+")) {

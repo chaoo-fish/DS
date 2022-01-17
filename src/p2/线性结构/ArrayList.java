@@ -191,7 +191,7 @@ public class ArrayList<E> implements List<E> {
     }
 
     @Override
-    public List<E> sublist(int fromIndex, int toIndex) {
+    public List<E> subList(int fromIndex, int toIndex) {
         if (fromIndex < 0 || toIndex >= size || fromIndex > toIndex) {
             throw new IllegalArgumentException("");
         }

@@ -40,5 +40,5 @@ public interface List<E> extends Iterable<E> {
     public void sort(Comparator<E> c);
 
     // 获取自线性表 原线性表中[fromIndex,toIndex]
-    public List<E> sublist(int fromIndex, int toIndex);
+    public List<E> subList(int fromIndex, int toIndex);
 }
