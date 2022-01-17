@@ -662,3 +662,160 @@ element()	查看队首元素
 只是在其中加了一些对栈方法的实现
 
 代码位置:[ArrayDeque.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/ArrayDeque.java)
+# 三、动态链表
+
+## 1.单项链表
+
+> 每个节点只存储数值和指向下一个节点
+
+**✨节点定义**
+
+```java
+// 定义节点对象
+private class Node {
+    E data;
+    Node next;
+
+    public Node() {
+        this(null, null);
+    }
+
+    public Node(E data) {
+        this(data, null);
+    }
+
+    public Node(E data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return data.toString();
+    }
+}
+```
+
+
+
+代码位置:[LinkedSinglyList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedSinglyList.java)
+
+## 2.单项循环链表
+
+> 在单项链表的基础上将首尾链接在了一起
+
+**✨节点定义**
+
+```java
+//定义结点对象
+private class Node {
+    E data;     //数据域
+    Node next;  //指针域
+
+    public Node() {
+        this(null, null);
+    }
+
+    public Node(E data) {
+        this(data, null);
+    }
+
+    public Node(E data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return data.toString();
+    }
+}
+```
+
+代码位置:[LinkedSinglyCircularList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedSinglyCircularList.java)
+
+#### 约瑟夫环
+
+> 据说著名犹太历史学家Josephus有过一下的故事:
+>
+> 在罗马人占领乔塔帕特后，39个犹太人与Josephus及他的朋友躲在一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3个人该人必须自杀，然后再由下一个重新报数,直到所有人都自杀身亡为止。
+>
+> 然而Josephus和他的朋友并不想遵从, Josephus要他的朋友先假装遵从，他将朋友与自己安排在了第16个与第31个位置，于是逃过了这场死亡游戏。
+
+```java
+//约瑟夫环问题
+public void josephusLoop() {
+    if (size <= 2) {
+        return;
+    }
+    Node p = head;
+    while (size != 2) {
+        p = p.next;
+        Node del = p.next;
+        if (del == head) {
+            head = del.next;
+        } else if (del == tail) {
+            tail = p;
+        }
+        p.next = del.next;
+        del.next = null;
+        p = p.next;
+        size--;
+    }
+}
+```
+
+#### 逢七过游戏
+
+```java
+//逢七过游戏
+/*
+输入玩家的个数
+输入从哪个玩家开始
+输入该玩家从哪个数字开始
+输入一共玩几个数字
+打印出每个玩家将要报出的所有数字
+*/
+```
+
+代码位置:[SevenGame.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/SevenGame.java)
+
+## 3.双向循环链表
+
+> 每个节点存储了 元素和指向上一个节点的指针和指向下一个节点的指针
+>
+> 首尾相连接
+
+**✨节点定义**
+
+```java
+private class Node {
+    E data;
+    Node pre;   //直接前驱
+    Node next;  //直接后继
+
+    public Node() {
+        this(null, null, null);
+    }
+
+    public Node(E data) {
+        this(data, null, null);
+    }
+
+    public Node(E data, Node pre, Node next) {
+        this.data = data;
+        this.pre = pre;
+        this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return data.toString();
+    }
+}
+```
+
+
+
+代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
+
