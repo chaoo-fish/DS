@@ -2,6 +2,7 @@ package p5.排序算法;
 
 import java.util.Arrays;
 
+// 归并排序
 public class MergeSort extends Sort {
 
     public MergeSort(int[] arr) {

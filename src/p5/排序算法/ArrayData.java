@@ -5,7 +5,7 @@ import java.util.Random;
 public class ArrayData {
     // 产生数据 完全随机0 大致有序1 大致平稳2
     private int type;
-    private int[] arr = new int[10000];
+    private int[] arr = new int[10000]; // 产生10000条数据
     Random random = new Random();
 
     public ArrayData(int type) {

@@ -1,5 +1,6 @@
 package p5.排序算法;
 
+// 快排
 public class QuickSort01 extends Sort{
     public QuickSort01(int[] arr) {
         super(arr);
