@@ -1,5 +1,6 @@
 package p5.排序算法;
 
+// 排序类,其它排序方法需要继承该类
 public abstract class Sort {
 
     public int[] arr;

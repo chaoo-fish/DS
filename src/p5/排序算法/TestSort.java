@@ -1,21 +1,30 @@
 package p5.排序算法;
 
 
+import java.util.Arrays;
+
 /*
 算法的执行时间 除了跟算法的策略有关系外 还跟数据分别情况有关系
 数据分布情况:完全随机 大致有序 大致平稳
  */
 public class TestSort {
     public static void main(String[] args) {
-        ArrayData data = new ArrayData(0);
+        ArrayData data = new ArrayData(1);
         int[] arr = data.makeData();
-        System.out.println(arr.length);
 //        test01(arr);
-        test02(arr);
-        test03(arr);
-        test04(arr);
+//        test02(arr);
+//        test03(arr);
+//        test04(arr);
+        test05(arr);
     }
 
+    private static void test05(int[] arr) {
+        long start = System.currentTimeMillis();
+        MergeSort mergeSort = new MergeSort(arr);
+        mergeSort.sort();
+        long end = System.currentTimeMillis();
+        System.out.println("归并排序: " + (end - start) + "ms");
+    }
 
 
     private static void test04(int[] arr) {
