@@ -819,3 +819,142 @@ private class Node {
 
 代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
 
+# 四、分治回溯
+
+
+
+## 1.棋盘覆盖
+
+
+
+博客位置：[https://blog.csdn.net/weixin_46049759/article/details/122574014](https://blog.csdn.net/weixin_46049759/article/details/122574014)
+
+## 2.汉诺塔
+
+
+
+代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
+
+## 3.全排列
+
+
+
+代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
+
+## 4.迷宫问题
+
+
+
+代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
+
+
+
+## 5.N皇后问题
+
+
+
+代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
+
+## 6.数独
+
+
+
+博客位置：[https://blog.csdn.net/weixin_46049759/article/details/122628294](https://blog.csdn.net/weixin_46049759/article/details/122628294)
+
+
+
+# 五、排序算法
+
+## 1.冒泡排序
+
+> 遍历数组，两两比较，如果前一个数大于后一个数就交换两个数，每次循环都会找出最大的那个数
+
+```java
+for (int i = 0; i < arr.length - 1; i++) {
+    for (int j = 0; j < arr.length - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+            swap(j, j + 1);
+        }
+    }
+}
+```
+
+代码位置:[BubbleSort.java](https://github.com/sanshisi/DS/blob/master/out/production/DS/p5/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/BubbleSort.class)
+
+## 2.插入排序
+
+> 这个可以类似于小朋友排队，我们先默认第一个是有序的，然后开始将第二个小朋友依次和前面的小朋友进行比较，如果小于前面的就交换，大于就不动
+
+```java
+for (int i = 1; i < arr.length; i++) {
+    int e = arr[i]; // 选中要和前面比较的小盆友
+    int j = 0;
+    for (j = i; j > 0 && arr[j - 1] > e; j--) { // 从有序的队伍后面向前比较
+        arr[j] = arr[j - 1]; // 如果前面的比他大,就把前面的向后移动一位
+    }
+    arr[j] = e;
+}
+```
+
+代码位置:[InsertionSort.java](https://github.com/sanshisi/DS/blob/master/out/production/DS/p5/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/InsertionSort.class)
+
+## 3.选择排序
+
+> 对数组进行遍历，需要每次找到剩余元素最小的和当前元素交换
+
+```java
+for (int i = 0; i < arr.length - 1; i++) {
+    for (int j = i + 1; j < arr.length; j++) {
+        if (arr[i] > arr[j]) { // 如果后面元素比当前元素更小，就进行交换
+            swap(i, j);
+        }
+    }
+}
+```
+
+代码位置:[SelectionSort.java](https://github.com/sanshisi/DS/blob/master/out/production/DS/p5/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/SelectionSort.class)
+
+## 4.希尔排序
+
+> 插入排序的升级版，又叫**缩小增量排序**
+>
+> 9 8 7 6 5 4 3 2 4 0
+>
+> 0 1 2 3 4 5 6 7 8 9
+>
+> 先去长度10一半，间隔为5，角标0,5进行比较大小(角标0,5中间间隔5个)，如果后面小于前面的则交换数据(插入排序)，然后依次是角标1,6；2,8……
+>
+> 然后再取间隔的一半，间隔为2，角标0,2进行比较，之后角标1,3进行比较，之后角标2,4进行比较，角标2,4比较完后，还可以继续向前比较角标0,2……
+>
+> ……
+>
+> 间隔为1，两两比较
+
+```java
+int len = arr.length;
+// O(n^1.3)
+for (int gap = len / 2; gap > 0; gap = gap / 2) { // 每次取间隔为一半
+    for (int i = gap; i < len; i++) {
+        int e = arr[i];
+        int j = i;
+        while (j - gap >= 0 && arr[j - gap] > e) { // 插入排序的体现
+            arr[j] = arr[j - gap];
+            j = j - gap;
+        }
+        arr[j] = e;
+    }
+}
+```
+
+代码位置:[ShellSort.java](https://github.com/sanshisi/DS/blob/master/out/production/DS/p5/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/ShellSort.class)
+
+## 5.归并排序
+
+> 依次对半分，一直分到最小一个，然后开始合并，合并的时候其实可以理解为【合并两个有序数组】
+
+![image-20220202213646085](https://gitee.com/sanshisi/img/raw/master/202202022136168.png)
+
+代码位置:[MergeSort.java](https://github.com/sanshisi/DS/blob/master/out/production/DS/p5/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/MergeSort.class)
+
+## 6.快排
+
