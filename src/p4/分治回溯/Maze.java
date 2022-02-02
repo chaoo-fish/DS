@@ -2,6 +2,7 @@ package p4.分治回溯;
 
 import p3.链式结构.LinkedList;
 
+// 迷宫
 public class Maze {
     private static int[][] maze = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1},

@@ -1,6 +1,7 @@
 package p4.分治回溯;
 
 import java.io.*;
+
 //数独
 public class Sudoku {
     private static int i = 0;

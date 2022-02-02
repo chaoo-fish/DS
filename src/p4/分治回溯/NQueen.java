@@ -1,4 +1,5 @@
 package p4.分治回溯;
+
 //N皇后问题
 public class NQueen {
     private static int count = 0;   //记录解的个数

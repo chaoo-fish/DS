@@ -10,11 +10,11 @@ public class ShellSort extends Sort {
     public void sort() {
         int len = arr.length;
         // O(n^1.3)
-        for (int gap = len / 2; gap > 0; gap = gap / 2) {
+        for (int gap = len / 2; gap > 0; gap = gap / 2) { // 每次取间隔为一半
             for (int i = gap; i < len; i++) {
                 int e = arr[i];
                 int j = i;
-                while (j - gap >= 0 && arr[j - gap] > e) {
+                while (j - gap >= 0 && arr[j - gap] > e) { // 插入排序的体现
                     arr[j] = arr[j - gap];
                     j = j - gap;
                 }

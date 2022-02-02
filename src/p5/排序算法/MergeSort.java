@@ -12,7 +12,7 @@ public class MergeSort extends Sort {
     @Override
     public void sort() {
         mergeSort(0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
     }
 
     private void mergeSort(int L, int R) { // 5  0  4    02 34
@@ -33,6 +33,9 @@ public class MergeSort extends Sort {
         }
     }
 
+    /*
+        归并排序的灵魂所在,合并两个有序数组
+     */
     private void merge(int L, int mid, int R) {
         int[] aux = new int[R - L + 1];
         for (int k = L; k <= R; k++) {
@@ -41,13 +44,13 @@ public class MergeSort extends Sort {
         int i = L;
         int j = mid + 1;
         for (int k = L; k <= R; k++) {
-            if (i > mid) { // 左边完毕了
+            if (i > mid) { // 左边完毕了,将剩余右边的元素依次放入
                 arr[k] = aux[j - L];
                 j++;
-            } else if (j > R) { // 右边完毕了
+            } else if (j > R) { // 右边完毕了,将剩余左边的元素依次放入
                 arr[k] = aux[i - L];
                 i++;
-            } else if (aux[i - L] < aux[j - L]) {
+            } else if (aux[i - L] < aux[j - L]) { // 哪个小,先放哪个
                 arr[k] = aux[i - L];
                 i++;
             } else {
