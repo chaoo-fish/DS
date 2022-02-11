@@ -12,7 +12,7 @@ public class ArrayData {
         this.type = type;
     }
 
-    int[] makeData() {
+    public int[] makeData() {
         if (type == 0) {
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = random.nextInt(10000);

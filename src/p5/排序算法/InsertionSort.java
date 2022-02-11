@@ -18,6 +18,7 @@ public class InsertionSort extends Sort {
                 arr[j] = arr[j - 1]; // 如果前面的比他大,就把前面的向后移动一位
             }
             arr[j] = e;// 最终插入该插入的位置
+
         }
     }
 }

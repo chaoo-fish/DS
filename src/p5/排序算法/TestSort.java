@@ -1,6 +1,7 @@
 package p5.排序算法;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /*
 算法的执行时间
@@ -14,11 +15,16 @@ import java.util.Arrays;
 希尔      2           3          2
 归并      1           2          1
 单快      1+          3+         1+
+双快      1+          1+         1+
+三快      n           n          n
+基排      3-          4          3-
+桶排序    4+          3-          4+
+计数排序   4+          3-          4+
 */
 public class TestSort {
     public static void main(String[] args) {
 
-        ArrayData data = new ArrayData(2);
+        ArrayData data = new ArrayData(0);
         int[] arr = data.makeData();
         test01(arr);
         test02(arr);
@@ -26,6 +32,51 @@ public class TestSort {
         test04(arr);
         test05(arr);
         test06(arr);
+        test07(arr);
+        test08(arr);
+        test09(arr);
+        test10(arr);
+        test11(arr);
+    }
+
+    private static void test11(int[] arr) {
+        CountingSort countingSort = new CountingSort(arr);
+        Long start = System.currentTimeMillis();
+        countingSort.sort();
+        Long end = System.currentTimeMillis();
+        System.out.println("计数排序：" + (end - start) + "ms");
+    }
+
+    private static void test10(int[] arr) {
+        BucketSort bucketSort = new BucketSort(arr);
+        Long start = System.currentTimeMillis();
+        bucketSort.sort();
+        Long end = System.currentTimeMillis();
+        System.out.println("桶排序：" + (end - start) + "ms");
+    }
+
+    private static void test09(int[] arr) {
+        RadixSort radixSort = new RadixSort(arr);
+        Long start = System.currentTimeMillis();
+        radixSort.sort();
+        Long end = System.currentTimeMillis();
+        System.out.println("基数排序：" + (end - start) + "ms");
+    }
+
+    private static void test08(int[] arr) {
+        QuickSort03 quickSort03 = new QuickSort03(arr);
+        Long start = System.currentTimeMillis();
+        quickSort03.sort();
+        Long end = System.currentTimeMillis();
+        System.out.println("三路快排：" + (end - start) + "ms");
+    }
+
+    private static void test07(int[] arr) {
+        QuickSort02 quickSort02 = new QuickSort02(arr);
+        Long start = System.currentTimeMillis();
+        quickSort02.sort();
+        Long end = System.currentTimeMillis();
+        System.out.println("双路快排：" + (end - start) + "ms");
     }
 
     private static void test06(int[] arr) {
