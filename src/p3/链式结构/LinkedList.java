@@ -224,6 +224,11 @@ public class LinkedList<E> implements List<E>, Dequeue<E>, Stack<E> {
 
     @Override
     public int indexOf(E element) {
+        //这个判空的操作 在测试TreeSet时发现的Bug 以此弥补一下 2022-2-13 15:03:00
+        if (isEmpty()) {
+            return -1;
+        }
+
         Node p = head;
         int index = 0;
         while (!p.data.equals(element)) {

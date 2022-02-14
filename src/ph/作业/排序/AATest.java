@@ -2,8 +2,6 @@ package ph.作业.排序;
 
 import p5.排序算法.ArrayData;
 
-import java.util.Arrays;
-
 public class AATest {
     public static void main(String[] args) {
         ArrayData data = new ArrayData(1);
@@ -12,7 +10,17 @@ public class AATest {
 //        sort02(arr);
 //        sort03(arr);
 //        sort04(arr);
-        sort05(arr);
+//        sort05(arr);
+        sort06(arr);
+
+    }
+
+    private static void sort06(int[] arr) {
+        QuickSort03 quickSort03 = new QuickSort03(arr);
+        Long start = System.currentTimeMillis();
+        quickSort03.sort();
+        Long end = System.currentTimeMillis();
+        System.out.println("三路快排：" + (end - start) + "ms");
 
     }
 

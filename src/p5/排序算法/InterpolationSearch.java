@@ -1,7 +1,7 @@
 package p5.排序算法;
 
 import static java.util.Arrays.binarySearch;
-
+// 差值查找
 public class InterpolationSearch {
     public static void main(String[] args) {
         int[] arr = {-2, -1, 0, 3, 5, 9, 10, 22};
