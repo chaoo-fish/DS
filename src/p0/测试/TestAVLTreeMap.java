@@ -31,6 +31,7 @@ public class TestAVLTreeMap {
         FileOperation.readFile("a-tale-of-two-cities.txt",words);
 //        Collections.sort(words);
         test01(words);
+        System.out.println("=============================");
         test02(words);
     }
 
