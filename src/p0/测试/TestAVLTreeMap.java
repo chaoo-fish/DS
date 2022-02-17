@@ -1,12 +1,9 @@
 package p0.测试;
 
 
-import p6.树与哈希表.AVLTreeMap;
-import p6.树与哈希表.FileOperation;
-import p6.树与哈希表.TreeMap;
+import p6.树与哈希表.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class TestAVLTreeMap {
     public static void main(String[] args) {
@@ -30,9 +27,49 @@ public class TestAVLTreeMap {
         ArrayList<String> words = new ArrayList<>();
         FileOperation.readFile("a-tale-of-two-cities.txt",words);
 //        Collections.sort(words);
+        System.out.println("===============");
         test01(words);
-        System.out.println("=============================");
+        System.out.println("===============");
         test02(words);
+        System.out.println("===============");
+        test03(words);
+        System.out.println("===============");
+        test04(words);
+    }
+
+    private static void test04(ArrayList<String> words) {
+        HashTable<String,Integer> hashTable = new HashTable();
+        long startTime = System.currentTimeMillis();
+        for (String word : words) {
+            if (hashTable.contains(word)) {
+                hashTable.set(word,hashTable.get(word) + 1);
+            } else {
+                hashTable.put(word,1);
+            }
+        }
+        System.out.println(hashTable.get("the"));
+        System.out.println(hashTable.get("he"));
+        System.out.println(hashTable.get("she"));
+        System.out.println(hashTable.get("fuck"));
+        System.out.println(hashTable.get("is"));
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime + "ms");
+    }
+
+    private static void test03(ArrayList<String> words) {
+        Trie trie = new Trie();
+        long startTime = System.currentTimeMillis();
+        for (String word : words) {
+            trie.add(word);
+        }
+        System.out.println(trie.count("the"));
+        System.out.println(trie.count("he"));
+        System.out.println(trie.count("she"));
+        System.out.println(trie.count("fuck"));
+        System.out.println(trie.count("is"));
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime + "ms");
+
     }
 
     private static void test02(ArrayList<String> words) {

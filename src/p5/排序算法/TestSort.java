@@ -37,6 +37,15 @@ public class TestSort {
         test09(arr);
         test10(arr);
         test11(arr);
+        test12(arr);
+    }
+
+    private static void test12(int[] arr) {
+        HeapSort heapSort = new HeapSort(arr);
+        Long start = System.currentTimeMillis();
+        heapSort.sort();
+        Long end = System.currentTimeMillis();
+        System.out.println("最大堆排序：" + (end - start) + "ms");
     }
 
     private static void test11(int[] arr) {
