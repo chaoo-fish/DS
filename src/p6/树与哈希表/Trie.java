@@ -1,9 +1,10 @@
 package p6.树与哈希表;
 
+// Tire树 - 字典数
 public class Trie {
     private class Node {
         public boolean isWord;
-        public int count;
+        public int count; // 重复单词的个数
         public AVLTreeMap<Character,Node> childs;
         public Node() {
             this(false);
@@ -25,6 +26,8 @@ public class Trie {
     public int size() {
         return size;
     }
+
+    // 统计一个单词出现的次数
     public int count(String word) {
         Node cur = root;
         for (int i = 0; i < word.length(); i++) {
@@ -40,6 +43,8 @@ public class Trie {
             return 0;
         }
     }
+
+    // 添加单词
     public void add(String word) {
         Node cur = root;
         for (int i = 0; i < word.length(); i++) {
@@ -58,6 +63,7 @@ public class Trie {
         }
     }
 
+    // 判断是否包含单词
     public boolean contains(String word) {
         Node cur = root;
         for (int i = 0; i < word.length(); i++) {
@@ -70,6 +76,7 @@ public class Trie {
         return cur.isWord;
     }
 
+    // 是否有前缀
     public boolean isPrefix(String prefix) {
         Node cur = root;
         for (int i = 0; i < prefix.length(); i++) {

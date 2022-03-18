@@ -37,15 +37,15 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E>{
         /*
         //添加的迭代思路
         Node node = new Node(e);
-        if (isEmpty()) {
+        if (isEmpty()) { // 如果当前节点为空,直接让当前节点成为root节点
             root = node;
             size++;
         }
-        Node cur = root;
+        Node cur = root; // 定义一个节点,用来迭代
         while (true) {
             //新元素比当前大 往右走
             if (node.e.compareTo(cur.e) > 0) {
-                if (cur.right == null) {
+                if (cur.right == null) { // 如果右边为空,则插入
                     cur.right = node;
                     size++;
                     break;
@@ -54,7 +54,7 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E>{
                 }
             //新元素比当前小 往左走
             } else if (node.e.compareTo(cur.e) < 0) {
-                if (cur.left == null) {
+                if (cur.left == null) { // 如果左边为空,则插入
                     cur.left = node;
                     size++;
                     break;
@@ -210,6 +210,28 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E>{
         postOrder(node.right);
         System.out.println(node.e);
     }
+    // 后序遍历-迭代
+    public void postOrderNR() {
+        LinkedList<Node> stack = new LinkedList<>();
+        LinkedList<E> list = new LinkedList<>();
+        if (root == null) {
+            return;
+        }
+
+        stack.add(root);
+        while (!stack.isEmpty()) {
+            Node cur = stack.pop();
+            list.addFirst(cur.e);
+            if (cur.left != null) {
+                stack.add(cur.left);
+            }
+            if (cur.right != null) {
+                stack.add(cur.right);
+            }
+        }
+        System.out.println(list);
+    }
+
 
     //层序遍历-迭代方式
     public void levelOrder() {
@@ -254,6 +276,17 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E>{
         }
         return minimum(node.left);
     }
+    // 迭代
+    public E minimumNR() {
+        Node cur = root;
+        while (cur.left != null) {
+            cur = cur.left;
+            if (cur.left == null) {
+                break;
+            }
+        }
+        return cur.e;
+    }
 
     //寻找二分搜索树中的最大值
     //自己尝试迭代方式实现
@@ -271,6 +304,8 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E>{
         }
         return maximum(node.right);
     }
+
+
 
     //删除最小值
     public E removeMin() {
@@ -346,11 +381,11 @@ public class BinarySearchTree<E extends Comparable<E>> implements Iterable<E>{
                 return leftNode;
             }
             //左右都不为空 把右子树的最小值当成新树的根返回
-            Node successor = minimum(node.right);
-            successor.right = removeMin(node.right);
+            Node successor = minimum(node.right); // 右子树的最小值的节点
+            successor.right = removeMin(node.right); //
             successor.left = node.left;
             node.left = node.right = null;
-            return successor;
+            return successor; // 最终将新的节点返回
         }
     }
 

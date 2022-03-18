@@ -20,7 +20,7 @@ public class AATest {
         Long start = System.currentTimeMillis();
         quickSort03.sort();
         Long end = System.currentTimeMillis();
-        System.out.println("三路快排：" + (end - start) + "ms");
+        System.out.println("三路快排:" + (end - start) + "ms");
 
     }
 
