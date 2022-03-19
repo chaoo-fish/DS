@@ -1,6 +1,6 @@
 package p5.排序算法;
 
-// 快排
+// 双路快排
 public class QuickSort02 extends Sort {
     public QuickSort02(int[] arr) {
         super(arr);

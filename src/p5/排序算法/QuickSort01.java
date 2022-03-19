@@ -27,13 +27,15 @@ public class QuickSort01 extends Sort{
         int v = arr[L];
 
         //arr[l+1 ~ j] < v < arr[j+1 ~ i)
-        int j = L;
+        int j = L; // 记录后面将要把中点换到哪个坐标
         for (int i = L + 1; i <= R; i++) {
             if (arr[i] < v) {
                 swap(j + 1, i);
                 j++;
             }
         }
+
+        // 最后将 中点值 交换到中间
         swap(L, j);
         return j;
     }
