@@ -840,19 +840,14 @@ private class Node {
 
 
 
-代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
+代码位置:[Hanoi.java](https://github.com/chaoo-fish/DS/blob/master/src/p4/%E5%88%86%E6%B2%BB%E5%9B%9E%E6%BA%AF/Hanoi.java)
+                       
 
 ## 3.全排列
 
 
 
-代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
-
-## 4.迷宫问题
-
-
-
-代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
+代码位置:[FullPermutation.java](https://github.com/chaoo-fish/DS/blob/master/src/p4/分治回溯/FullPermutation.java)
 
 
 
@@ -860,15 +855,13 @@ private class Node {
 
 
 
-代码位置:[LinkedList.java](https://github.com/sanshisi/DS/blob/master/src/p2/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/LinkedList.java)
+代码位置:[NQueen.java](https://github.com/chaoo-fish/DS/blob/master/src/p4/%E5%88%86%E6%B2%BB%E5%9B%9E%E6%BA%AF/NQueen.java)
 
 ## 6.数独
 
+​          
 
-
-博客位置：[https://blog.csdn.net/weixin_46049759/article/details/122628294](https://blog.csdn.net/weixin_46049759/article/details/122628294)
-
-
+代码位置:[Sudoku.java](https://github.com/chaoo-fish/DS/blob/master/src/p4/分治回溯/Sudoku.java)          
 
 # 五、排序算法
 
